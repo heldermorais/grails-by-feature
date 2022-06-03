@@ -1,0 +1,7 @@
+
+
+grails{
+    plugins{
+        implementation project(':by-feature-common')
+    }
+}

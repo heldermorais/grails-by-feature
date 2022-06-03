@@ -1,0 +1,5 @@
+//rootProject.name = 'app-by-feature'
+
+include 'by-feature'
+
+include 'by-feature-common','by-feature-person', 'by-feature-pet'
