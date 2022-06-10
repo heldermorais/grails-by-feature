@@ -1,0 +1,56 @@
+
+site:
+  theme: 'Editorial'
+  baseUrl: './'
+  #baseUrl: 'http://username.github.io/project'
+  about:
+    siteName: Grais "byFeature" Project
+    siteDescription: This is a short description of this project.
+
+theme:
+  primaryColor: '#6796B2'
+  #legacySearch: false
+  social:
+    github: 'heldermorais/grails-by-feature'
+  #metaComponents:
+  #  - type: 'orchidSearch'
+  menu:
+    - type: 'separator'
+      title: 'Wiki'
+    - type: 'wiki'
+    - type: 'page'
+      itemId: 'Changelog'
+    - type: 'separator'
+      title: 'API Docs'
+    - type: 'sourcedocPages'
+      moduleType: 'groovydoc'
+      node: 'classes'
+      asSubmenu: true
+      submenuTitle: 'Classes'
+    - type: 'sourcedocPages'
+      moduleType: 'groovydoc'
+      node: 'packages'
+      asSubmenu: true
+      submenuTitle: 'Packages'
+
+groovydoc:
+  sourceDirs:
+    - './../../../../by-feature-common/src/main/groovy'
+    - './../../../../by-feature-person/src/main/groovy'
+    - './../../../../by-feature-pet/src/main/groovy'
+  pages:
+    menu:
+      - type: 'sourcedocPageLinks'
+        moduleType: 'groovydoc'
+        itemTitleType: 'SIGNATURE'
+        includeItems: true
+
+#services:
+#  publications:
+#    stages:
+#      githubPages:
+#        branch: gh-pages
+#        repo: 'project'
+#        username: 'username'
+#      githubReleases:
+#        repo: 'username/project'
