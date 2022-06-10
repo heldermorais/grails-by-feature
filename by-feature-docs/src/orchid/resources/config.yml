@@ -4,7 +4,7 @@ site:
   baseUrl: './'
   #baseUrl: 'http://username.github.io/project'
   about:
-    siteName: Grais "byFeature" Project
+    siteName: Grails "byFeature" Project
     siteDescription: This is a short description of this project.
 
 theme:
@@ -15,6 +15,9 @@ theme:
   #metaComponents:
   #  - type: 'orchidSearch'
   menu:
+    - type: "link"
+      title: Home
+      url: /
     - type: 'separator'
       title: 'Wiki'
     - type: 'wiki'
@@ -35,6 +38,8 @@ theme:
 
 groovydoc:
   sourceDirs:
+    - './../../../../by-feature/src/main/groovy'
+    - './../../../../by-feature/grails-app'
     - './../../../../by-feature-common/src/main/groovy'
     - './../../../../by-feature-person/src/main/groovy'
     - './../../../../by-feature-pet/src/main/groovy'
@@ -45,12 +50,3 @@ groovydoc:
         itemTitleType: 'SIGNATURE'
         includeItems: true
 
-#services:
-#  publications:
-#    stages:
-#      githubPages:
-#        branch: gh-pages
-#        repo: 'project'
-#        username: 'username'
-#      githubReleases:
-#        repo: 'username/project'
