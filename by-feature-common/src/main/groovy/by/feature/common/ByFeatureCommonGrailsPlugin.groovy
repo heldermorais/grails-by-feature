@@ -1,6 +1,9 @@
 package by.feature.common
 
 import grails.plugins.*
+import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.Configuration
+
 
 class ByFeatureCommonGrailsPlugin extends Plugin {
 

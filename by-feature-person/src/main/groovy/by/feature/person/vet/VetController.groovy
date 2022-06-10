@@ -1,4 +1,4 @@
-package by.feature.person
+package by.feature.person.vet
 
 import grails.validation.ValidationException
 import grails.web.Controller

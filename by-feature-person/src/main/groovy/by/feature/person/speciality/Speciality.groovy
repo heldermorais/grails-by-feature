@@ -1,4 +1,4 @@
-package by.feature.person
+package by.feature.person.speciality
 
 import grails.persistence.Entity
 

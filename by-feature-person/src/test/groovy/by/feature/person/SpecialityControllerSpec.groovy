@@ -1,5 +1,8 @@
 package by.feature.person
 
+import by.feature.person.speciality.Speciality
+import by.feature.person.speciality.SpecialityController
+import by.feature.person.speciality.SpecialityService
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException

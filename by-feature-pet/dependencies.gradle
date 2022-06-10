@@ -2,6 +2,6 @@
 
 grails{
     plugins{
-        implementation project(':by-feature-common')
+        api project(':by-feature-common')
     }
 }

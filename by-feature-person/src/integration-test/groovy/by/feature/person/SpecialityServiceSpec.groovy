@@ -1,5 +1,7 @@
 package by.feature.person
 
+import by.feature.person.speciality.Speciality
+import by.feature.person.speciality.SpecialityService
 import grails.testing.mixin.integration.Integration
 import grails.gorm.transactions.Rollback
 import spock.lang.Specification

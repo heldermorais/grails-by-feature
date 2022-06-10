@@ -1,5 +1,8 @@
 package by.feature.person
 
+import by.feature.person.vet.Vet
+import by.feature.person.vet.VetController
+import by.feature.person.vet.VetService
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException

@@ -17,6 +17,6 @@
 
     <logger name="by.feature" level="DEBUG" />
 
-    <logger name="org.grails" level="DEBUG" />
-    <logger name="grails" level="DEBUG" />
+<!--    <logger name="org.grails" level="DEBUG" />-->
+<!--    <logger name="grails" level="DEBUG" />-->
 </configuration>

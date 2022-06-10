@@ -1,6 +1,9 @@
 package by.feature.person
 
 import grails.plugins.*
+import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.Configuration
+
 
 class ByFeaturePersonGrailsPlugin extends Plugin {
 

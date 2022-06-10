@@ -1,6 +1,8 @@
 package by.feature.pet
 
 import grails.plugins.*
+import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.Configuration
 
 class ByFeaturePetGrailsPlugin extends Plugin {
 
@@ -28,6 +30,7 @@ Brief summary/description of the plugin.
     def dependsOn = [
             byFeatureCommon: "* > 0.9"
     ]
+
 
     def loadAfter =['byFeatureCommon']
 
