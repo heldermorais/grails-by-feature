@@ -2,7 +2,6 @@
 // 1. Apply Orchid plugin
 plugins {
     id "com.eden.orchidPlugin" version "$orchidGradlePluginVersion"
-    id "groovy"
 }
 
 // 2. Include Orchid dependencies
@@ -12,10 +11,6 @@ dependencies {
     orchidRuntimeOnly "io.github.javaeden.orchid:OrchidGroovydoc:$orchidGradlePluginVersion"
     orchidRuntimeOnly "io.github.javaeden.orchid:OrchidPluginDocs:$orchidGradlePluginVersion"
 
-    implementation project(':by-feature')
-    implementation project(':by-feature-common')
-    implementation project(':by-feature-person')
-    implementation project(':by-feature-pet')
 }
 
 // 3. Get dependencies from JCenter and Kotlinx Bintray repo
