@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <meta name="layout" content="common"/>
+    <title>Hello - Welcome to Grails</title>
 </head>
 <body>
 <content tag="nav">
@@ -52,7 +52,7 @@
 <div id="content" role="main">
     <div class="container">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+            <h1>Speciality.Hello - Welcome to Grails</h1>
 
             <p>
                 Congratulations, you have successfully started your first Grails application! At the moment

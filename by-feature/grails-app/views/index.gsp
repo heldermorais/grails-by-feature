@@ -71,6 +71,17 @@
                     </g:each>
                 </ul>
             </div>
+
+            <div id="beans" role="navigation">
+                <h2>Available Controllers:</h2>
+                <ul>
+                    <g:each var="c" in="${grailsApplication.getMainContext().getBeanDefinitionNames().sort { it } }">
+                        <li class="controller">
+                            ${c}
+                        </li>
+                    </g:each>
+                </ul>
+            </div>
         </section>
     </div>
 </div>

@@ -16,12 +16,12 @@ class Application extends GrailsAutoConfiguration {
     }
 
 
-//    @Override
-//    Collection<String> packageNames() {
-//        log.debug "... packageNames() = ${super.packageNames() + ['by.feature.common', 'by.feature.person', 'by.feature.pet']}"
-//        return super.packageNames() + ['by.feature.common', 'by.feature.person', 'by.feature.pet']
-//    }
-//
+    @Override
+    Collection<String> packageNames() {
+        log.debug "... packageNames() = ${super.packageNames() + ['by.feature.common', 'by.feature.person', 'by.feature.pet']}"
+        return super.packageNames() + ['by.feature.common', 'by.feature.person', 'by.feature.pet']
+    }
+
 
 
     @Override

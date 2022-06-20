@@ -1,5 +1,6 @@
 package by.feature.person.speciality
 
+import grails.artefact.Artefact
 import grails.persistence.Entity
 
 

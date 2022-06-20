@@ -11,4 +11,10 @@ class Vet extends Persona {
 
     static hasMany = [specialities: Speciality]
 
+
+    static constraints = {
+        firstName nullable: false, blank: false, minSize: 4
+        lastName blank: false, nullable: false, minSize: 4
+    }
+
 }

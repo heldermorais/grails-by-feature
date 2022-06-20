@@ -1,10 +1,11 @@
 package by.feature.common
 
+import by.feature.common.gui.CommonGuiLayoutHelper
 import grails.plugins.*
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.Configuration
+import groovy.util.logging.Slf4j
 
 
+@Slf4j
 class ByFeatureCommonGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
@@ -45,7 +46,17 @@ Brief summary/description of the plugin.
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
-        }
+
+            log.debug "doWithSpring() - BEGIN"
+
+            log.debug "doWithSpring() - registering bean : guiLayoutHelper( CommonGuiLayoutHelper )"
+            guiLayoutHelper( CommonGuiLayoutHelper ){
+                templateRootPath = "/templates/common/"
+            }
+
+            log.debug "doWithSpring() - END"
+
+    }
     }
 
     void doWithDynamicMethods() {

@@ -1,7 +1,7 @@
 package by.feature.person
 
 import by.feature.person.vet.Vet
-import by.feature.person.vet.VetService
+import by.feature.person.vet.VetDataService
 import grails.testing.mixin.integration.Integration
 import grails.gorm.transactions.Rollback
 import spock.lang.Specification
@@ -9,9 +9,9 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class VetServiceSpec extends Specification {
+class VetDataServiceSpec extends Specification {
 
-    VetService vetService
+    VetDataService vetService
     SessionFactory sessionFactory
 
     private Long setupData() {

@@ -3,7 +3,7 @@ package by.feature.person.vet
 import grails.gorm.services.Service
 
 @Service(Vet)
-interface VetService {
+interface VetDataService {
 
     Vet get(Serializable id)
 

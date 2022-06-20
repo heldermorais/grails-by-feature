@@ -2,7 +2,7 @@ package by.feature.person
 
 import by.feature.person.vet.Vet
 import by.feature.person.vet.VetController
-import by.feature.person.vet.VetService
+import by.feature.person.vet.VetDataService
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
@@ -20,7 +20,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -54,7 +54,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the save action correctly persists"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * save(_ as Vet)
         }
 
@@ -75,7 +75,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * save(_ as Vet) >> { Vet vet ->
                 throw new ValidationException("Invalid instance", vet.errors)
             }
@@ -94,7 +94,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the show action with a null id"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * get(null) >> null
         }
 
@@ -107,7 +107,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the show action with a valid id"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * get(2) >> new Vet()
         }
 
@@ -120,7 +120,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the edit action with a null id"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * get(null) >> null
         }
 
@@ -133,7 +133,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * get(2) >> new Vet()
         }
 
@@ -158,7 +158,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the update action correctly persists"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * save(_ as Vet)
         }
 
@@ -179,7 +179,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * save(_ as Vet) >> { Vet vet ->
                 throw new ValidationException("Invalid instance", vet.errors)
             }
@@ -208,7 +208,7 @@ class VetControllerSpec extends Specification implements ControllerUnitTest<VetC
 
     void "Test the delete action with an instance"() {
         given:
-        controller.vetService = Mock(VetService) {
+        controller.vetDataService = Mock(VetDataService) {
             1 * delete(2)
         }
 

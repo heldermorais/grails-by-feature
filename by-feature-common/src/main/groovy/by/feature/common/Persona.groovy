@@ -19,9 +19,6 @@ abstract class Persona {
 	 */
 	String lastName
 
-	static constraints = {
-		firstName blank: false
-		lastName blank: false
-	}
+
 
 }
