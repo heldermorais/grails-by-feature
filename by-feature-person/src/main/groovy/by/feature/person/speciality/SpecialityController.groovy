@@ -8,17 +8,21 @@ import static org.springframework.http.HttpStatus.*
 @Controller
 class SpecialityController {
 
-    SpecialityService specialityService
+    protected SpecialityDataService specialityDataService
+
+    SpecialityController(SpecialityDataService specialityDataService){
+        this.specialityDataService = specialityDataService
+    }
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond specialityService.list(params), model:[specialityCount: specialityService.count()]
+        respond specialityDataService.list(params), model:[specialityCount: specialityDataService.count()]
     }
 
     def show(Long id) {
-        respond specialityService.get(id)
+        respond specialityDataService.get(id)
     }
 
     def create() {
@@ -32,7 +36,7 @@ class SpecialityController {
         }
 
         try {
-            specialityService.save(speciality)
+            specialityDataService.save(speciality)
         } catch (ValidationException e) {
             respond speciality.errors, view:'create'
             return
@@ -48,7 +52,7 @@ class SpecialityController {
     }
 
     def edit(Long id) {
-        respond specialityService.get(id)
+        respond specialityDataService.get(id)
     }
 
     def update(Speciality speciality) {
@@ -58,7 +62,7 @@ class SpecialityController {
         }
 
         try {
-            specialityService.save(speciality)
+            specialityDataService.save(speciality)
         } catch (ValidationException e) {
             respond speciality.errors, view:'edit'
             return
@@ -79,7 +83,7 @@ class SpecialityController {
             return
         }
 
-        specialityService.delete(id)
+        specialityDataService.delete(id)
 
         request.withFormat {
             form multipartForm {

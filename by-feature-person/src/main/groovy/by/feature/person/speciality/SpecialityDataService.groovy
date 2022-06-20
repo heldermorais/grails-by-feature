@@ -3,7 +3,7 @@ package by.feature.person.speciality
 import grails.gorm.services.Service
 
 @Service(Speciality)
-interface SpecialityService {
+interface SpecialityDataService {
 
     Speciality get(Serializable id)
 

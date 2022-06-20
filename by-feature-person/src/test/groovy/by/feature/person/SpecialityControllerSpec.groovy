@@ -2,7 +2,7 @@ package by.feature.person
 
 import by.feature.person.speciality.Speciality
 import by.feature.person.speciality.SpecialityController
-import by.feature.person.speciality.SpecialityService
+import by.feature.person.speciality.SpecialityDataService
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
@@ -20,7 +20,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -54,7 +54,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the save action correctly persists"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * save(_ as Speciality)
         }
 
@@ -75,7 +75,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * save(_ as Speciality) >> { Speciality speciality ->
                 throw new ValidationException("Invalid instance", speciality.errors)
             }
@@ -94,7 +94,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the show action with a null id"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * get(null) >> null
         }
 
@@ -107,7 +107,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the show action with a valid id"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * get(2) >> new Speciality()
         }
 
@@ -120,7 +120,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the edit action with a null id"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * get(null) >> null
         }
 
@@ -133,7 +133,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * get(2) >> new Speciality()
         }
 
@@ -158,7 +158,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the update action correctly persists"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * save(_ as Speciality)
         }
 
@@ -179,7 +179,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * save(_ as Speciality) >> { Speciality speciality ->
                 throw new ValidationException("Invalid instance", speciality.errors)
             }
@@ -208,7 +208,7 @@ class SpecialityControllerSpec extends Specification implements ControllerUnitTe
 
     void "Test the delete action with an instance"() {
         given:
-        controller.specialityService = Mock(SpecialityService) {
+        controller.specialityDataService = Mock(SpecialityDataService) {
             1 * delete(2)
         }
 

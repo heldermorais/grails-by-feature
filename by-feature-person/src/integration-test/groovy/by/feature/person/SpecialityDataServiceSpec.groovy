@@ -1,7 +1,7 @@
 package by.feature.person
 
 import by.feature.person.speciality.Speciality
-import by.feature.person.speciality.SpecialityService
+import by.feature.person.speciality.SpecialityDataService
 import grails.testing.mixin.integration.Integration
 import grails.gorm.transactions.Rollback
 import spock.lang.Specification
@@ -9,9 +9,9 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class SpecialityServiceSpec extends Specification {
+class SpecialityDataServiceSpec extends Specification {
 
-    SpecialityService specialityService
+    SpecialityDataService specialityService
     SessionFactory sessionFactory
 
     private Long setupData() {
