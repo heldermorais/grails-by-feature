@@ -1,7 +1,10 @@
 package by.feature.gui.bootstrap
 
 import grails.plugins.*
+import groovy.util.logging.Slf4j
 
+
+@Slf4j
 class ByFeatureGuiBootstrapGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
@@ -25,6 +28,13 @@ Brief summary/description of the plugin.
 
     // Extra (optional) plugin metadata
 
+    def dependsOn = [
+            byFeatureCommon: "* > 0.9"
+    ]
+
+    def loadAfter =['byFeatureCommon']
+
+
     // License: one of 'APACHE', 'GPL2', 'GPL3'
 //    def license = "APACHE"
 
@@ -42,6 +52,9 @@ Brief summary/description of the plugin.
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
+            log.debug "doWithSpring() - BEGIN"
+
+            log.debug "doWithSpring() - END"
         }
     }
 

@@ -16,6 +16,7 @@ apply plugin:"idea"
 apply plugin:"org.grails.grails-plugin"
 apply plugin:"asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
+apply plugin:"java-library"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
@@ -88,3 +89,6 @@ bootJar.enabled = false
 assets {
     packagePlugin = true
 }
+
+
+apply from: 'dependencies.gradle'

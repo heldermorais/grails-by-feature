@@ -129,4 +129,4 @@ assets {
 }
 
 
-apply from: '../app-dependencies.gradle'
+apply from: 'app-dependencies.gradle'

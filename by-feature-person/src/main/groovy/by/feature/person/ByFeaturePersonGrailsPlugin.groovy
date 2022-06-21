@@ -1,10 +1,11 @@
 package by.feature.person
 
 import grails.plugins.*
+import groovy.util.logging.Slf4j
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 
-
+@Slf4j
 class ByFeaturePersonGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
@@ -51,6 +52,9 @@ Brief summary/description of the plugin.
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
+            log.debug "doWithSpring() - BEGIN"
+
+            log.debug "doWithSpring() - END"
         }
     }
 
