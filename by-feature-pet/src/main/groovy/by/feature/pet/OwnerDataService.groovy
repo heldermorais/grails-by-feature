@@ -3,7 +3,7 @@ package by.feature.pet
 import grails.gorm.services.Service
 
 @Service(Owner)
-interface OwnerService {
+interface OwnerDataService {
 
     Owner get(Serializable id)
 

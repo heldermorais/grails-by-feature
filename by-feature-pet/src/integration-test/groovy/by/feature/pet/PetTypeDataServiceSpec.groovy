@@ -7,9 +7,9 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class PetTypeServiceSpec extends Specification {
+class PetTypeDataServiceSpec extends Specification {
 
-    PetTypeService petTypeService
+    PetTypeDataService petTypeService
     SessionFactory sessionFactory
 
     private Long setupData() {

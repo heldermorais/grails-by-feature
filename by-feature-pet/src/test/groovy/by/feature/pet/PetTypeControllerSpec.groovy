@@ -17,7 +17,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -51,7 +51,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the save action correctly persists"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * save(_ as PetType)
         }
 
@@ -72,7 +72,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * save(_ as PetType) >> { PetType petType ->
                 throw new ValidationException("Invalid instance", petType.errors)
             }
@@ -91,7 +91,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the show action with a null id"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * get(null) >> null
         }
 
@@ -104,7 +104,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the show action with a valid id"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * get(2) >> new PetType()
         }
 
@@ -117,7 +117,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the edit action with a null id"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * get(null) >> null
         }
 
@@ -130,7 +130,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * get(2) >> new PetType()
         }
 
@@ -155,7 +155,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the update action correctly persists"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * save(_ as PetType)
         }
 
@@ -176,7 +176,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * save(_ as PetType) >> { PetType petType ->
                 throw new ValidationException("Invalid instance", petType.errors)
             }
@@ -205,7 +205,7 @@ class PetTypeControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the delete action with an instance"() {
         given:
-        controller.petTypeService = Mock(PetTypeService) {
+        controller.petTypeService = Mock(PetTypeDataService) {
             1 * delete(2)
         }
 

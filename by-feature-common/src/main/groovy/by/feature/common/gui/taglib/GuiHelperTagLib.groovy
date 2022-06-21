@@ -1,11 +1,12 @@
 package by.feature.common.gui.taglib
 
+import by.feature.common.artefacts.ByFeatureTaglib
 import grails.artefact.Artefact
 import grails.gsp.TagLib
 import org.grails.core.artefact.gsp.TagLibArtefactHandler
 
 
-@TagLib
+@ByFeatureTaglib
 class GuiHelperTagLib {
 
     static namespace = "gui"

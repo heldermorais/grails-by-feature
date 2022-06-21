@@ -7,37 +7,37 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class VisitServiceSpec extends Specification {
+class OwnerDataServiceSpec extends Specification {
 
-    VisitService visitService
+    OwnerDataService ownerService
     SessionFactory sessionFactory
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Visit(...).save(flush: true, failOnError: true)
-        //new Visit(...).save(flush: true, failOnError: true)
-        //Visit visit = new Visit(...).save(flush: true, failOnError: true)
-        //new Visit(...).save(flush: true, failOnError: true)
-        //new Visit(...).save(flush: true, failOnError: true)
+        //new Owner(...).save(flush: true, failOnError: true)
+        //new Owner(...).save(flush: true, failOnError: true)
+        //Owner owner = new Owner(...).save(flush: true, failOnError: true)
+        //new Owner(...).save(flush: true, failOnError: true)
+        //new Owner(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //visit.id
+        //owner.id
     }
 
     void "test get"() {
         setupData()
 
         expect:
-        visitService.get(1) != null
+        ownerService.get(1) != null
     }
 
     void "test list"() {
         setupData()
 
         when:
-        List<Visit> visitList = visitService.list(max: 2, offset: 2)
+        List<Owner> ownerList = ownerService.list(max: 2, offset: 2)
 
         then:
-        visitList.size() == 2
+        ownerList.size() == 2
         assert false, "TODO: Verify the correct instances are returned"
     }
 
@@ -45,30 +45,30 @@ class VisitServiceSpec extends Specification {
         setupData()
 
         expect:
-        visitService.count() == 5
+        ownerService.count() == 5
     }
 
     void "test delete"() {
-        Long visitId = setupData()
+        Long ownerId = setupData()
 
         expect:
-        visitService.count() == 5
+        ownerService.count() == 5
 
         when:
-        visitService.delete(visitId)
+        ownerService.delete(ownerId)
         sessionFactory.currentSession.flush()
 
         then:
-        visitService.count() == 4
+        ownerService.count() == 4
     }
 
     void "test save"() {
         when:
         assert false, "TODO: Provide a valid instance to save"
-        Visit visit = new Visit()
-        visitService.save(visit)
+        Owner owner = new Owner()
+        ownerService.save(owner)
 
         then:
-        visit.id != null
+        owner.id != null
     }
 }

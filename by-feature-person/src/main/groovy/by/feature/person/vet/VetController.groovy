@@ -1,13 +1,14 @@
 package by.feature.person.vet
 
 import by.feature.common.CommonHexaController
+import by.feature.common.artefacts.ByFeatureController
 import grails.core.GrailsApplication
 import grails.validation.ValidationException
 import grails.web.Controller
 
 import static org.springframework.http.HttpStatus.*
 
-@Controller
+@ByFeatureController
 class VetController extends CommonHexaController<Vet, VetDataService>{
 
 

@@ -1,15 +1,12 @@
 package by.feature.common.events.taglib
 
+import by.feature.common.artefacts.ByFeatureTaglib
 import by.feature.common.events.GuiRenderingEvent
 import by.feature.common.events.HookEventsService
-import grails.artefact.Artefact
-import grails.gsp.TagLib
-import groovy.util.logging.Slf4j
-import org.grails.core.artefact.gsp.TagLibArtefactHandler
 
 
-@TagLib
-@Slf4j
+
+@ByFeatureTaglib
 class HookTagLib {
 
     static namespace = "hook"

@@ -7,37 +7,37 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class OwnerServiceSpec extends Specification {
+class PetDataServiceSpec extends Specification {
 
-    OwnerService ownerService
+    PetDataService petService
     SessionFactory sessionFactory
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Owner(...).save(flush: true, failOnError: true)
-        //new Owner(...).save(flush: true, failOnError: true)
-        //Owner owner = new Owner(...).save(flush: true, failOnError: true)
-        //new Owner(...).save(flush: true, failOnError: true)
-        //new Owner(...).save(flush: true, failOnError: true)
+        //new Pet(...).save(flush: true, failOnError: true)
+        //new Pet(...).save(flush: true, failOnError: true)
+        //Pet pet = new Pet(...).save(flush: true, failOnError: true)
+        //new Pet(...).save(flush: true, failOnError: true)
+        //new Pet(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //owner.id
+        //pet.id
     }
 
     void "test get"() {
         setupData()
 
         expect:
-        ownerService.get(1) != null
+        petService.get(1) != null
     }
 
     void "test list"() {
         setupData()
 
         when:
-        List<Owner> ownerList = ownerService.list(max: 2, offset: 2)
+        List<Pet> petList = petService.list(max: 2, offset: 2)
 
         then:
-        ownerList.size() == 2
+        petList.size() == 2
         assert false, "TODO: Verify the correct instances are returned"
     }
 
@@ -45,30 +45,30 @@ class OwnerServiceSpec extends Specification {
         setupData()
 
         expect:
-        ownerService.count() == 5
+        petService.count() == 5
     }
 
     void "test delete"() {
-        Long ownerId = setupData()
+        Long petId = setupData()
 
         expect:
-        ownerService.count() == 5
+        petService.count() == 5
 
         when:
-        ownerService.delete(ownerId)
+        petService.delete(petId)
         sessionFactory.currentSession.flush()
 
         then:
-        ownerService.count() == 4
+        petService.count() == 4
     }
 
     void "test save"() {
         when:
         assert false, "TODO: Provide a valid instance to save"
-        Owner owner = new Owner()
-        ownerService.save(owner)
+        Pet pet = new Pet()
+        petService.save(pet)
 
         then:
-        owner.id != null
+        pet.id != null
     }
 }

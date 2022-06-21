@@ -3,7 +3,7 @@ package by.feature.pet
 import grails.gorm.services.Service
 
 @Service(Visit)
-interface VisitService {
+interface VisitDataService {
 
     Visit get(Serializable id)
 
