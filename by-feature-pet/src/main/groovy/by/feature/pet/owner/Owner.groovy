@@ -1,6 +1,7 @@
-package by.feature.pet
+package by.feature.pet.owner
 
 import by.feature.common.Persona
+import by.feature.pet.animal.Pet
 import grails.persistence.Entity
 
 

@@ -1,4 +1,4 @@
-package by.feature.pet
+package by.feature.pet.visit
 
 import grails.gorm.services.Service
 

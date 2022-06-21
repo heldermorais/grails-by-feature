@@ -1,5 +1,7 @@
 package by.feature.pet
 
+import by.feature.pet.type.PetType
+import by.feature.pet.type.PetTypeDataService
 import grails.testing.mixin.integration.Integration
 import grails.gorm.transactions.Rollback
 import spock.lang.Specification

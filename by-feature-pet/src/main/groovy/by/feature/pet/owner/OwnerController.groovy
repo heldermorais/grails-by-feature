@@ -1,12 +1,8 @@
-package by.feature.pet
+package by.feature.pet.owner
 
 import by.feature.common.CommonHexaController
 import by.feature.common.artefacts.ByFeatureController
 import grails.core.GrailsApplication
-import grails.validation.ValidationException
-import grails.web.Controller
-
-import static org.springframework.http.HttpStatus.*
 
 @ByFeatureController
 class OwnerController extends CommonHexaController<Owner, OwnerDataService>{

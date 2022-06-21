@@ -2,7 +2,7 @@
 
 include 'by-feature'
 
-include 'by-feature-common'
+include 'by-feature-common', 'by-feature-gui-bootstrap'
 include 'by-feature-person', 'by-feature-pet'
 
 include 'by-feature-docs'

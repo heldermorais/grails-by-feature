@@ -1,4 +1,4 @@
-package by.feature.pet
+package by.feature.pet.animal
 
 import grails.gorm.services.Service
 

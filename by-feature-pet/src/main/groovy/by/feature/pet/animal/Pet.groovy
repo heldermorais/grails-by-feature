@@ -1,5 +1,8 @@
-package by.feature.pet
+package by.feature.pet.animal
 
+import by.feature.pet.owner.Owner
+import by.feature.pet.type.PetType
+import by.feature.pet.visit.Visit
 import grails.persistence.Entity
 
 /**
@@ -13,7 +16,7 @@ class Pet {
 	String name
 	Date birthDate
 	PetType type
-	Owner owner
+    Owner owner
 
 	static hasMany = [visits: Visit]
 

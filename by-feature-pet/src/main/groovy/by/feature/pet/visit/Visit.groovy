@@ -1,5 +1,6 @@
-package by.feature.pet
+package by.feature.pet.visit
 
+import by.feature.pet.animal.Pet
 import grails.persistence.Entity
 
 /**
@@ -12,7 +13,7 @@ class Visit {
 
 	Date date = new Date()
 	String description
-	Pet pet
+    Pet pet
 
 	static constraints = {
 		description blank:false

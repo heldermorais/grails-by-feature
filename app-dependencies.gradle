@@ -3,6 +3,8 @@ grails{
     plugins{
         //implementation project(':by-feature-common')
 
+        implementation project(':by-feature-gui-bootstrap')
+
         implementation project(':by-feature-person')
         implementation project(':by-feature-pet')
     }
