@@ -1,17 +1,17 @@
 package by.feature.pet.autorun
 
+import grails.artefact.Artefact
 import groovy.util.logging.Slf4j
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Service
 
 @Slf4j
-@Service
-class PetAutorun implements ApplicationRunner {
+@Artefact("Service")
+class PetAutorunService implements ApplicationRunner {
 
 
-
-    PetAutorun(){
+    PetAutorunService(){
         log.debug "PetAutorun - CREATED"
     }
 
