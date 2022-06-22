@@ -1,8 +1,10 @@
 package by.feature.person.autorun
 
 import by.feature.common.artefacts.ByFeatureService
+import by.feature.common.gui.helpers.domain.DomainGuiRendererService
 import by.feature.person.speciality.Speciality
 import by.feature.person.vet.Vet
+import grails.core.GrailsApplication
 import grails.gorm.transactions.Transactional
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -11,17 +13,35 @@ import org.springframework.boot.ApplicationRunner
 @ByFeatureService
 class PetInitDBService implements ApplicationRunner {
 
-    PetInitDBService(){
+    protected GrailsApplication grailsApplication
+
+    PetInitDBService(GrailsApplication grailsApplication){
+        this.grailsApplication = grailsApplication
         log.info " .. PersonAutorunService - CREATED"
     }
 
     @Override
     void run(ApplicationArguments args) throws Exception {
         log.debug "PersonAutorunService - BEGIN"
+
+
         initSpeciality()
         initVet()
+
+       // testingEntityProperties()
+
         log.debug "PersonAutorunService - END"
     }
+
+
+
+    void testingEntityProperties(){
+        log.debug "PersonAutorunService.testingEntityProperties() - BEGIN"
+        DomainGuiRendererService domainGuiRendererService = this.grailsApplication.mainContext.getBean(DomainGuiRendererService)
+        domainGuiRendererService.renderDomainAsForm(new Speciality(name: "Spec 001"), "")
+        log.debug "PersonAutorunService.testingEntityProperties() - END"
+    }
+
 
 
     @Transactional

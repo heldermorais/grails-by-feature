@@ -2,6 +2,8 @@ package by.feature.person.speciality
 
 import by.feature.common.CommonHexaController
 import by.feature.common.artefacts.ByFeatureController
+import by.feature.common.gui.helpers.domain.DomainGuiRendererService
+import by.feature.person.vet.Vet
 import grails.core.GrailsApplication
 import grails.validation.ValidationException
 import grails.web.Controller
@@ -18,6 +20,16 @@ class SpecialityController extends CommonHexaController<Speciality, SpecialityDa
         //grailsApplication.getMainContext().getBeanDefinitionNames()
     }
 
+
+    DomainGuiRendererService domainGuiRendererService
+
+    @Override
+    def index(Integer max) {
+
+        domainGuiRendererService.renderDomainAsForm( new Vet() )
+
+        return super.index(max)
+    }
 
     def hello(){
         respond view:'hello'
