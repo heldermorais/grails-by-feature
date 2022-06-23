@@ -36,7 +36,7 @@ class DomainGuiRendererService {
 
 
 
-    private BeanAndPrefix resolveBeanAndPrefix(beanAttribute, prefixAttribute, attributes) {
+    protected BeanAndPrefix resolveBeanAndPrefix(beanAttribute, prefixAttribute, attributes) {
 //        def bean = resolvePageScopeVariable(beanAttribute) ?: beanAttribute
 //        def prefix = resolvePageScopeVariable(prefixAttribute) ?: prefixAttribute
         def bean = beanAttribute
@@ -111,7 +111,7 @@ class DomainGuiRendererService {
             // If 'except' is not set, but 'list' is, exclude 'id', 'dateCreated' and 'lastUpdated' by default
             List<String> blacklist = attrs.containsKey('except') ? getList(attrs.except) : (list ? ['id', 'dateCreated', 'lastUpdated'] : [])
 
-            properties.removeAll { it.name in blacklist }
+            //properties.removeAll { it.name in blacklist }
         }
 
         return properties

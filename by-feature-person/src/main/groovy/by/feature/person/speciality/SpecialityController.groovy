@@ -17,7 +17,6 @@ class SpecialityController extends CommonHexaController<Speciality, SpecialityDa
 
     SpecialityController(GrailsApplication grailsApplication, SpecialityDataService specialityDataService) {
         super(grailsApplication, specialityDataService)
-        //grailsApplication.getMainContext().getBeanDefinitionNames()
     }
 
 
@@ -29,11 +28,14 @@ class SpecialityController extends CommonHexaController<Speciality, SpecialityDa
         domainGuiRendererService.renderDomainAsForm( new Vet() )
 
         return super.index(max)
+
     }
 
     def hello(){
         respond view:'hello'
     }
 
+    def set_aside_tray(){
 
+    }
 }

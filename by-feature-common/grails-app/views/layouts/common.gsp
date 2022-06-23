@@ -33,7 +33,14 @@
     </div>
 </nav>
 
+
 <g:layoutBody/>
+
+
+<turbo-frame id="set_aside_tray" src="/speciality/set_aside_tray">
+    <h3>turbo</h3>
+</turbo-frame>
+
 
 <div class="footer" role="contentinfo">
     <div class="container-fluid">
@@ -79,8 +86,11 @@
     <g:message code="spinner.alt" default="Loading&hellip;"/>
 </div>
 
+
+
 <asset:javascript src="application.js"/>
 
+<asset:javascript src="common/common-application.js"/>
 
 <!-- Layout common - /layouts/common.gsp  END -->
 

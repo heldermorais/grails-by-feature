@@ -27,6 +27,7 @@ configurations {
     runtimeClasspath {
         extendsFrom developmentOnly
     }
+    externalLibs
 }
 
 dependencies {
@@ -57,6 +58,8 @@ dependencies {
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.mockito:mockito-core"
     testImplementation "org.grails:grails-web-testing-support"
+
+    externalLibs files('../libs/grails-custom-scaffolds-0.1-SNAPSHOT-plain.jar')
 }
 
 bootRun {
