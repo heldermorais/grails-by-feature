@@ -22,7 +22,7 @@ import static org.springframework.http.HttpStatus.*
 
 @Controller
 @Slf4j
-abstract class CommonHexaController<T,U> {
+abstract class HexaController<T,U> {
 
     protected GrailsApplication grailsApplication
 
@@ -40,8 +40,7 @@ abstract class CommonHexaController<T,U> {
     protected IGuiLayoutHelper guiLayoutHelper
 
 
-
-    CommonHexaController(GrailsApplication grailsApplication, U useCaseService){
+    HexaController(GrailsApplication grailsApplication, U useCaseService){
 
         this.grailsApplication   = grailsApplication
         this.useCaseService      = useCaseService

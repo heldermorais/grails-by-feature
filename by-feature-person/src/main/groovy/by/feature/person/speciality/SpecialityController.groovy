@@ -1,18 +1,13 @@
 package by.feature.person.speciality
 
-import by.feature.common.CommonHexaController
+import by.feature.common.HexaController
 import by.feature.common.artefacts.ByFeatureController
 import by.feature.common.gui.helpers.domain.DomainGuiRendererService
 import by.feature.person.vet.Vet
 import grails.core.GrailsApplication
-import grails.validation.ValidationException
-import grails.web.Controller
-import grails.web.servlet.mvc.GrailsParameterMap
-
-import static org.springframework.http.HttpStatus.*
 
 @ByFeatureController
-class SpecialityController extends CommonHexaController<Speciality, SpecialityDataService> {
+class SpecialityController extends HexaController<Speciality, SpecialityDataService> {
 
 
     SpecialityController(GrailsApplication grailsApplication, SpecialityDataService specialityDataService) {
@@ -21,6 +16,7 @@ class SpecialityController extends CommonHexaController<Speciality, SpecialityDa
 
 
     DomainGuiRendererService domainGuiRendererService
+
 
     @Override
     def index(Integer max) {
@@ -31,11 +27,16 @@ class SpecialityController extends CommonHexaController<Speciality, SpecialityDa
 
     }
 
+
     def hello(){
         respond view:'hello'
     }
 
+
+
     def set_aside_tray(){
 
     }
+
+
 }
