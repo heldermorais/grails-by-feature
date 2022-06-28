@@ -37,11 +37,6 @@
 <g:layoutBody/>
 
 
-<turbo-frame id="set_aside_tray" src="/speciality/set_aside_tray">
-    <h3>turbo</h3>
-</turbo-frame>
-
-
 <div class="footer" role="contentinfo">
     <div class="container-fluid">
         <div class="row">

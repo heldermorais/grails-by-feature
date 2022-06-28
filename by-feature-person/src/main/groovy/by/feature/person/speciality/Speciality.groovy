@@ -13,4 +13,10 @@ class Speciality {
         name blank: false, minSize: 3, maxSize: 20, unique: true
     }
 
+
+    @Override
+    String toString() {
+        return "(${this.id}) - ${name}"
+    }
+
 }

@@ -1,6 +1,7 @@
 package by.feature.common.gui.helpers.domain
 
 import groovy.xml.DOMBuilder
+import groovy.xml.MarkupBuilder
 
 import java.lang.reflect.ParameterizedType
 
@@ -29,25 +30,36 @@ abstract class DomainGuiRenderer<T> {
 
 
     def renderDomain(){
-        def nodeBuilder = new NodeBuilder()
 
+        def nodeBuilder = new NodeBuilder()
         def studentlist = nodeBuilder.userlist {
             user(id: '1', studentname: 'John', Subject: 'Chemistry')
             user(id: '2', studentname: 'Joe', Subject: 'Maths')
             user(id: '3', studentname: 'Mark', Subject: 'Physics')
         }
+
     }
 
 
     static void main(String[] args) {
-        def nodeBuilder = new DOMBuilder()
 
-        def studentlist = nodeBuilder.domainRendered {
-            field(bean: '1', studentname: 'John', Subject: 'Chemistry')
-            user(id: '2', studentname: 'Joe', Subject: 'Maths')
-            user(id: '3', studentname: 'Mark', Subject: 'Physics')
+        def writer = new StringWriter()
+        def html = new MarkupBuilder(writer)
+        html.html {
+            head {
+                title 'Simple document'
+            }
+            body(id: 'main') {
+                h1 'Building HTML the Groovy Way'
+                p {
+                    mkp.yield 'Mixing text with '
+                    strong 'bold'
+                    mkp.yield ' elements.'
+                }
+                a href: 'more.html', 'Read more...'
+            }
         }
+        println writer
 
-        println studentlist
     }
 }

@@ -34,9 +34,4 @@ class SpecialityController extends HexaController<Speciality, SpecialityDataServ
 
 
 
-    def set_aside_tray(){
-
-    }
-
-
 }
