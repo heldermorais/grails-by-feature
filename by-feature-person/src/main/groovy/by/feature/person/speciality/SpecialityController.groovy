@@ -5,6 +5,7 @@ import by.feature.common.artefacts.ByFeatureController
 import by.feature.common.gui.helpers.domain.DomainGuiRendererService
 import by.feature.person.vet.Vet
 import grails.core.GrailsApplication
+import grails.web.servlet.mvc.GrailsParameterMap
 
 @ByFeatureController
 class SpecialityController extends HexaController<Speciality, SpecialityDataService> {
@@ -32,6 +33,10 @@ class SpecialityController extends HexaController<Speciality, SpecialityDataServ
         respond view:'hello'
     }
 
+    @Override
+    def update(Long id) {
+        return super.update(id)
+    }
 
 
 }
